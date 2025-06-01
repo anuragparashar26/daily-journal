@@ -1,0 +1,48 @@
+<div class="journal-container">
+    <div class="header">
+        <h1>My Journal</h1>
+        <button class="theme-toggle" (click)="toggleTheme()">
+            {{ isDarkMode ? '☀️' : '🌙' }}
+        </button>
+    </div>
+
+    <div class="entry-form">
+        <div class="form-controls">
+            <select [(ngModel)]="selectedCategory">
+                <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+            </select>
+            <select [(ngModel)]="selectedMood">
+                <option *ngFor="let mood of moods" [value]="mood">{{mood}}</option>
+            </select>
+        </div>
+
+        <textarea [(ngModel)]="currentEntry" placeholder="Write your thoughts..." rows="4"
+            [maxlength]="maxLength"></textarea>
+        <div class="char-counter" [class.warning]="getRemainingCharacters() < 50">
+            {{getRemainingCharacters()}} characters remaining
+        </div>
+        <button (click)="addEntry()" [disabled]="!currentEntry.trim()">Save Entry</button>
+    </div>
+
+    <div class="search-box">
+        <input type="text" [(ngModel)]="searchTerm" placeholder="Search entries...">
+    </div>
+
+    <div class="entries-list">
+        <div *ngFor="let entry of getFilteredEntries()" class="entry">
+            <div class="entry-header">
+                <span class="date">{{ entry.date | date:'medium' }}</span>
+                <div class="entry-meta">
+                    <span class="category">{{entry.category}}</span>
+                    <span class="mood">{{entry.mood}}</span>
+                    <button class="delete-btn" (click)="deleteEntry(entry.id)">×</button>
+                </div>
+            </div>
+            <p>{{ entry.content }}</p>
+            <div class="entry-footer">
+                <span class="char-count">Characters: {{entry.characterCount}}</span>
+                <span class="weather" *ngIf="entry.weather">Weather: {{entry.weather}}</span>
+            </div>
+        </div>
+    </div>
+</div>

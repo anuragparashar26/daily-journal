@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease;
+}
+
+.dark-theme {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark-theme select option {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.dark-theme select {
+  background-color: #1a1a1a;
+}

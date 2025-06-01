@@ -1,0 +1,163 @@
+.journal-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: var(--bg-color);
+}
+
+h1 {
+  text-align: center;
+}
+
+.entry-form {
+  margin-bottom: 30px;
+}
+
+textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  resize: vertical;
+  background-color: var(--entry-bg);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.entries-list {
+  margin-top: 20px;
+}
+
+.entry {
+  background-color: var(--entry-bg);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.entry-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.date {
+  color: var(--text-color);
+  opacity: 0.7;
+  font-size: 0.9em;
+}
+
+.delete-btn {
+  background-color: #ff4444;
+  padding: 2px 8px;
+  font-size: 16px;
+}
+
+.delete-btn:hover {
+  background-color: #cc0000;
+}
+
+.form-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: var(--entry-bg);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+.char-counter {
+  text-align: right;
+  font-size: 0.8em;
+  color: var(--text-color);
+  opacity: 0.7;
+  margin-bottom: 5px;
+}
+
+.char-counter.warning {
+  color: #ff4444;
+}
+
+.search-box {
+  margin: 20px 0;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: var(--entry-bg);
+  color: var(--text-color);
+  border-color: var(--border-color);
+}
+
+.entry-meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.category,
+.mood {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  background-color: var(--meta-bg);
+  color: var(--text-color);
+}
+
+.entry-footer {
+  margin-top: 10px;
+  font-size: 0.8em;
+  color: var(--text-color);
+  display: flex;
+  justify-content: space-between;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --entry-bg: #f9f9f9;
+  --border-color: #ddd;
+  --meta-bg: #e0e0e0;
+}
+
